@@ -15,7 +15,7 @@ namespace SunkenCompass
 
     {
         internal const string ModName = "SunkenCompass";
-        internal const string ModVersion = "1.0.0";
+        internal const string ModVersion = "1.0.1";
         internal const string Author = "Azumatt";
         private const string ModGuid = Author + "." + ModName;
         private static string ConfigFileName = ModGuid + ".cfg";

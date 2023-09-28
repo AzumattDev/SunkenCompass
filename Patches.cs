@@ -84,6 +84,9 @@ static class UICombatUpdatePatch
 
         if (SunkenCompassPlugin.ConfigEnabled.Value == SunkenCompassPlugin.Toggle.Off || !Global.code.Player || !SunkenCompassPlugin.GotCompassImage || !SunkenCompassPlugin.GotCompassMask)
             return;
+
+        SunkenCompassPlugin.ObjectParent.SetActive(!Global.code.OnGUI);
+
         float num1 = SunkenCompassPlugin.CompassUsePlayerDirection.Value == SunkenCompassPlugin.Toggle.Off ? FPSPlayer.code.CameraControlComponent.transform.eulerAngles.y : Global.code.Player.transform.eulerAngles.y;
         if (num1 > 180.0)
             num1 -= 360f;
@@ -93,6 +96,8 @@ static class UICombatUpdatePatch
         SunkenCompassPlugin.ObjectCompass.GetComponent<Image>().color = SunkenCompassPlugin.ColorCompass.Value;
         SunkenCompassPlugin.ObjectParent.GetComponent<RectTransform>().localScale = Vector3.one * SunkenCompassPlugin.CompassScale.Value;
         SunkenCompassPlugin.ObjectParent.GetComponent<RectTransform>().anchoredPosition = new Vector2(0.0f, (float)((Screen.height / (double)1 - SunkenCompassPlugin.ObjectCompass.GetComponent<Image>().sprite.texture.height * (double)SunkenCompassPlugin.CompassScale.Value) / 2.0)) - Vector2.up * SunkenCompassPlugin.CompassYOffset.Value;
+        //SunkenCompassPlugin.ObjectParent.GetComponent<RectTransform>().anchoredPosition = new Vector2(0.0f, (float)((1 - SunkenCompassPlugin.ObjectCompass.GetComponent<Image>().sprite.texture.height * SunkenCompassPlugin.CompassScale.Value) / 2.0) - SunkenCompassPlugin.CompassYOffset.Value);
+
 
         if (SunkenCompassPlugin.CompassShowCenterMark.Value != SunkenCompassPlugin.Toggle.On || SunkenCompassPlugin.ObjectCenterMark == null) return;
         SunkenCompassPlugin.ObjectCenterMark.GetComponent<Image>().color = SunkenCompassPlugin.ColorCenterMark.Value;
