@@ -1,6 +1,6 @@
 {
   "name": "SunkenCompass",
-  "version_number": "1.0.1",
+  "version_number": "1.0.2",
   "website_url": "https://discord.gg/Vd89cSgxNW",
   "description": "Adds a compass to the top of your screen. Can change the color, offset, and size of the compass (with a few more configs).",
   "dependencies": [
